@@ -3,7 +3,7 @@ name: Pages # 这个工作流的名称
 on:
   push:
     branches:
-      - my-hexo-blog  # 指定当推送到 'main' 分支时触发此工作流
+      - main  # 指定当推送到 'main' 分支时触发此工作流
 
 jobs:
   build: # 定义一个名为 build 的任务
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js # 步骤2：设置 Node.js 环境
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # 请确保此版本与你本地使用的 Node.js 主要版本兼容
+          node-version: "18" # 请确保此版本与你本地使用的 Node.js 主要版本兼容
 
       - name: Setup npm cache # 步骤3：缓存 npm 依赖，加速后续构建
         uses: actions/cache@v4
